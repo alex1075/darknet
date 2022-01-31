@@ -14,3 +14,18 @@ More details in articles on medium:
 Manual: https://github.com/AlexeyAB/darknet/wiki
 
 Fork of https://github.com/AlexeyAB/darknet
+
+### How to compile on Linux/macOS (using `CMake`)
+
+The `CMakeLists.txt` will attempt to find installed optional dependencies like CUDA, cudnn, ZED and build against those. It will also create a shared object library file to use `darknet` for code development.
+
+To update CMake on Ubuntu, it's better to follow guide here: https://apt.kitware.com/ or https://cmake.org/download/
+
+```bash
+git clone https://github.com/alex1075/darknet.git
+cd darknet
+mkdir build_release
+cd build_release
+cmake ..
+cmake --build . --target install --parallel 8
+```
