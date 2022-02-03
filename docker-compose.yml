@@ -1,11 +1,15 @@
+# You will need to connect to the container and execute train.sh to start the training
+
 version: "3.7"
 services:
-  PhD-YOLO:
+  Darknet:
     image: alex1075/darknet:latest
+    ports:
+     - 8070:8070
+     - 8090:8090
     volumes:
      - ./data:/darknet/data  # pass your images/annotations files through 
      - .cfg:/darknet/cfg # pass your weights/config files through 
-     - train.sh:/darknet/train.sh # required! container will look for train.sh file. WILL NOT RUN WITHOUT
     deploy:
       resources:
         reservations:
@@ -16,7 +20,7 @@ services:
     restart: always
     depends_on:
       - phd-tensorboard
-  PhD-tensorboard:
+  Tensorboard:
     image: alex1075/tensorboard:latest
     volumes:
      - ./data:/data #location of logfiles 
