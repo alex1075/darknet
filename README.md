@@ -29,3 +29,7 @@ cd build_release
 cmake ..
 cmake --build . --target install --parallel 8
 ```
+
+### How to run 
+
+Modify the train.sh script for your usage. Please make sure you pass the correct folder locations through.
