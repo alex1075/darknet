@@ -5,6 +5,7 @@ services:
     volumes:
      - ./data:/darknet/data  # pass your images/annotations files through 
      - .cfg:/darknet/cfg # pass your weights/config files through 
+     - train.sh:/darknet/train.sh
     deploy:
       resources:
         reservations:
