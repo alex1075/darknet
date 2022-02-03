@@ -5,7 +5,7 @@ services:
     volumes:
      - ./data:/darknet/data  # pass your images/annotations files through 
      - .cfg:/darknet/cfg # pass your weights/config files through 
-     - train.sh:/darknet/train.sh
+     - train.sh:/darknet/train.sh # required! container will look for train.sh file. WILL NOT RUN WITHOUT
     deploy:
       resources:
         reservations:
